@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboEmbed - Robot & Embedded Systems Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-robot logo-icon"></i>
+                <h1>RoboEmbed</h1>
+                <span class="tagline">Robot Programming & Embedded Systems Expert</span>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Tools</h3>
+                    <button class="tool-btn" id="ros-commands">
+                        <i class="fas fa-terminal"></i> ROS Commands
+                    </button>
+                    <button class="tool-btn" id="embedded-snippets">
+                        <i class="fas fa-microchip"></i> Embedded Snippets
+                    </button>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Examples</h3>
+                    <button class="example-btn" data-example="pid">PID Implementation</button>
+                    <button class="example-btn" data-example="rtos">RTOS Task Setup</button>
+                    <button class="example-btn" data-example="sensor">Sensor Fusion</button>
+                </div>
+            </div>
+
+            <div class="chat-window">
+                <div class="message-container" id="message-container">
+                    <div class="message bot-message">
+                        <div class="message-header">
+                            <i class="fas fa-robot"></i>
+                            <span>RoboEmbed</span>
+                        </div>
+                        <div class="message-content">
+                            Hello! I'm your expert assistant for robot programming and embedded systems. 
+                            How can I help you today? You can ask about ROS, microcontrollers, real-time 
+                            systems, sensor integration, or anything related to robotics and embedded systems.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="input-box">
+                        <textarea id="user-input" placeholder="Ask about robot programming or embedded systems..."></textarea>
+                        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="input-options">
+                        <button class="option-btn" title="Code Generation" id="code-btn">
+                            <i class="fas fa-code"></i>
+                        </button>
+                        <button class="option-btn" title="Hardware Recommendation" id="hardware-btn">
+                            <i class="fas fa-microchip"></i>
+                        </button>
+                        <button class="option-btn" title="ROS Help" id="ros-btn">
+                            <i class="fas fa-robot"></i>
+                        </button>
+                        <button class="option-btn" title="Clear Chat" id="clear-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="code-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Code Generation</h2>
+                <div class="form-group">
+                    <label for="code-language">Language:</label>
+                    <select id="code-language">
+                        <option value="cpp">C++</option>
+                        <option value="python">Python</option>
+                        <option value="c">C</option>
+                        <option value="rust">Rust</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="code-framework">Framework:</label>
+                    <select id="code-framework">
+                        <option value="none">None</option>
+                        <option value="ros">ROS</option>
+                        <option value="ros2">ROS2</option>
+                        <option value="arduino">Arduino</option>
+                        <option value="stm32hal">STM32 HAL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="code-description">Description:</label>
+                    <textarea id="code-description" placeholder="Describe the code you need..."></textarea>
+                </div>
+                <button id="generate-code-btn">Generate Code</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
